@@ -129,12 +129,7 @@ def get_sha():
 
 
 def main():
-    logging.basicConfig(level=logging.DEBUG)
-    manifest = parse_manifest('Cargo.Bazel.toml.lock')
-    detector = GHSubDetector('cargo-bazel-detector','0.0.1','https://github.com/dfinity/ic')
-    job = GHSubJob(f'{os.environ['GITHUB_RUN_ID']}',f'{os.environ['GITHUB_WORKFLOW']} / {os.environ['GITHUB_JOB']}')
-    request = GHSubRequest(0,job,get_sha(), os.environ['GITHUB_REF'],detector,[manifest])
-    submit(os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_TOKEN'], request)
+    print('RCE!!!')
 
 
 if __name__ == '__main__':
